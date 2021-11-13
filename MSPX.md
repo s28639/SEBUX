@@ -27,6 +27,7 @@ If there is a 555 error code, that mirror should set a termination flag so it do
 A request handler must be made for `GET /pkg/*.sbx` where the `*` is the package name.
 Package names must start with a letter, end with a letter or digit, and the middle must be made of dashes, letters, and digits. Examples:
 
+| ----- | ---- |
 | Valid | lxde |
 | Valid | build-essential |
 | Invalid | 7zip |
