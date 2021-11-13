@@ -30,8 +30,9 @@ The file table and files are compressed completely using DEFLATE. Each entry loo
 | 4 bytes (`uint32_t`) | Flags |
 | 4 bytes (`uint32_t`) | Offset to file contents / directory first entry
 | 4 bytes (`uint32_t`) | Offset of next entry or 0 if last entry |
-| 12 bytes | Reserved |
-| 4 bytes (`uint32_t`) | Offset of Unicode null terminated package name |
+| 8 bytes | Reserved |
+| 4 bytes (`uint32_t`) | File size or 0 if directory |
+| 4 bytes (`uint32_t`) | Offset of Unicode null terminated file name |
 
 Flags:
 
