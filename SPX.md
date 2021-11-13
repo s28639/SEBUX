@@ -9,10 +9,9 @@ This header is 64 bytes. It is required to be at the beginning of the file.
 | 4 bytes (`uint32_t`) | XSES checksum of following bytes |
 | 4 bytes (`uint32_t`) | Dependency descriptor offset |
 | 4 bytes (`uint32_t`) | Compressed file table and files offset |(DEFLATE) |
-| 19 bytes | Reserved, set to 0 |
+| 27 bytes | Reserved, set to 0 |
 | 4 bytes | File offset of uninstall BASH script (ASCIZ format) |
 | 16 bytes | Can be used for steganography or SPX extensions |
-| 4 bytes (`uint32_t`) | Offset of 
 | 1 byte (`uint8_t`) | Version |
 | 4 bytes (`uint32_t`) | Decompressed size of file table and files
 
