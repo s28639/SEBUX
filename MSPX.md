@@ -7,7 +7,7 @@ Combined structure:
 | **Type** | **Value** |
 | -------- | --------- |
 | 4 bytes | Magic number (ASCII `SMPX`) |
-| 4 bytes | CiseRC checksum |
+| 4 bytes | XSES checksum |
 | 16 bytes | MVID |
 | 16 bytes | MID |
 | 24 bytes | Encrypted MPWD with MEK through LCipher |
