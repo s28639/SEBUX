@@ -35,4 +35,6 @@ Package names must start with a letter, end with a letter or digit, and the midd
 
 The body must contain the file contents if the package exists with code 200 and application/octet-stream or empty body with code 404 and no MIME type if it doesn't exist.
 ## Root Directory Handling
-A request handler for `GET /` must be made. Redirect it to https://sebux.herokuapp.com/?use_mirror=$b64MID.
+A request handler for `GET /` must be made. Redirect it to https://sebux.herokuapp.com.
+## Online Check
+A request handler for `HEAD /ABI?R1.C` must be made. Return status code 200 with header `JKL` set to ASCII `OP` (Operating) if completely up and running, otherwise return status code 500 with header `JKL` set to ASCII `NOP` (Not Operating).
