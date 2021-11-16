@@ -1,5 +1,4 @@
 # FBR-APP Specification
-The main FBR-APP 
 ## Script
 ```bash
 #!/bin/bash
