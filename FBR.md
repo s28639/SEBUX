@@ -50,4 +50,62 @@ exit #FAP
 A relocation entry is just an offset of the place that needs to be re-located. The entry point gets 1 argument: FbrCall function address.
 ## FbrCall numbers
 An Intel assembly stub has been made for 32-bit x86 systems which also works on 64-bit x86-64 by assembling it for x86-64.
+```asm
+FbrStart:
+pop eax
+mov [FbrCallAddr], eax
+mov [BackupEsp], esp
+call FbrMain
+FbrExitPoint:
+mov esp, [BackupEsp]
+ret
+FbrCallAddr: dd 0
+FbrExit:
+pop eax
+jmp FbrExitPoint
+BackupEsp: dd 0
+FbrSetPixel:
+push dword 0
+jmp CallFbrCall
+FbrDrawLine:
+push dword 1
+jmp CallFbrCall
+FbrDrawRectOutOnly:
+push dword 2
+jmp CallFbrCall
+FbrDrawRectFillOnly:
+push dword 3
+jmp CallFbrCall
+FbrDrawRectFillOut:
+push dword 4
+jmp CallFbrCall
+FbrDrawText:
+push dword 5
+jmp CallFbrCall
+FbrDrawEllipseOutOnly:
+push dword 6
+jmp CallFbrCall
+FbrDrawEllipseFillOnly:
+push dword 7
+jmp CallFbrCall
+FbrDrawEllipseFillOut:
+push dword 8
+jmp CallFbrCall
+FbrGetFbInfo
+push dword 9
+CallFbrCall:
+jmp [FbrCallAddr]
 ```
+
+| **#** | **Function name** |
+| -- | -- |
+| 0 | FbrSetPixel |
+| 1 | FbrDrawLine |
+| 2 | FbrDrawRectOutOnly |
+| 3 | FbrDrawRectFillOnly |
+| 4 | FbrDrawRectFillOut |
+| 5 | FbrDrawText |
+| 6 | FbrDrawEllipseOutOnly |
+| 7 | FbrDrawEllipseFillOnly |
+| 8 | FbrDrawEllipseFillOut |
+| 9 | FbrGetFbInfo |
