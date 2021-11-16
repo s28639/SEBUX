@@ -47,4 +47,7 @@ exit #FAP
 | 0x30 (48) | 14 bytes | Extension area |
 | 0x3E (6) | 2 bytes (uint16_t) | # of relocation entries |
 
-A relocation entry is just an offset of the place that needs to be re-located. The entry point gets 1 argument: FbrCall address.
+A relocation entry is just an offset of the place that needs to be re-located. The entry point gets 1 argument: FbrCall function address.
+## FbrCall numbers
+An Intel assembly stub has been made for 32-bit x86 systems which also works on 64-bit x86-64 by assembling it for x86-64.
+```
