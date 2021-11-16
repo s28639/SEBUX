@@ -47,4 +47,4 @@ exit #FAP
 | 0x30 (48) | 14 bytes | Extension area |
 | 0x3E (6) | 2 bytes (uint16_t) | # of relocation entries |
 
-A relocation entry is just an offset of the place that needs to be re-located.
+A relocation entry is just an offset of the place that needs to be re-located. The entry point gets 1 argument: FbrCall address.
